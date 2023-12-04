@@ -82,6 +82,7 @@
                                             <th>Price</th>
                                             <th>SKU</th>
                                             <th>Model</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
 
@@ -96,6 +97,10 @@
                                                 <td><?php echo $item['price'] ?></td>
                                                 <td><?php echo $item['sku'] ?></td>
                                                 <td><?php echo $item['model'] ?></td>
+                                                <td>
+                                                    <a href="" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                                                    <a href="" class="btn btn-success"><i class="fa fa-edit"></i></a>
+                                                </td>
                                             </tr>
                                         <?php
                                         endforeach;

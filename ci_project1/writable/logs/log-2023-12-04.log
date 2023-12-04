@@ -1,0 +1,18 @@
+INFO - 2023-12-04 03:53:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-04 03:53:31 --> Undefined variable: title
+in APPPATH\Views\products\create.php on line 13.
+ 1 APPPATH\Views\products\create.php(13): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: title', 'F:\\Mizanur_Rahman_1277622\\XAMPP_7.4.3\\htdocs\\codeigniter\\ci_project1\\app\\Views\\products\\create.php', 13, [])
+ 2 SYSTEMPATH\View\View.php(228): include('F:\\Mizanur_Rahman_1277622\\XAMPP_7.4.3\\htdocs\\codeigniter\\ci_project1\\app\\Views\\products\\create.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('products/create', [], true)
+ 5 APPPATH\Controllers\ProductController.php(32): view('products/create')
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ProductController->create()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\Mizanur_Rahman_1277622\\XAMPP_7.4.3\\htdocs\\codeigniter\\ci_project1\\public\\index.php')
+INFO - 2023-12-04 03:53:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-04 03:55:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-04 03:55:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-04 03:58:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-04 03:58:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
