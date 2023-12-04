@@ -32,6 +32,17 @@ class ProductController extends BaseController
         return view('products/create');
     }
 
+    public function edit($id){
+        //echo $id;
+        $data = $this->products->find($id);
+        print_r($data);
+        return view('products/edit', $data);
+
+    }
+
+    public function update($id){
+        //DO SELF
+    }
     public function delete($id){
         //echo $id;
         $this->products->where('product_id', $id);
