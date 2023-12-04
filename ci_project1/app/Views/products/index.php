@@ -98,7 +98,8 @@
                                                 <td><?php echo $item['sku'] ?></td>
                                                 <td><?php echo $item['model'] ?></td>
                                                 <td>
-                                                    <a href="" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                                                    <a href="<?php echo base_url('/products/delete/'.$item['product_id'])?>" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+
                                                     <a href="" class="btn btn-success"><i class="fa fa-edit"></i></a>
                                                 </td>
                                             </tr>

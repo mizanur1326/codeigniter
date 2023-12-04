@@ -32,6 +32,14 @@ class ProductController extends BaseController
         return view('products/create');
     }
 
+    public function delete($id){
+        //echo $id;
+        $this->products->where('product_id', $id);
+        $this->products->delete();
+        //return redirect("products");
+        $this->response->redirect('/products');
+    }
+
     public function store(){
         // return $this->request->getVar('product');
         $data = [
@@ -56,6 +64,7 @@ class ProductController extends BaseController
             $session->setFlashdata('msg', 'Inserted Successfully');
             $this->response->redirect('/products');
         }
+
 
 
     }
