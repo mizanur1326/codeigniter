@@ -55,14 +55,15 @@
 
                 <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Add Product Form</h5>
+                            <h5 class="card-title">Edit Product</h5>
 
                             <?php echo validation_list_errors();?>
 
                             <!-- No Labels Form -->
-                            <form class="row g-3" action="store" method="post">
+                            <form class="row g-3" action="<?php echo site_url('products/update/'. $product_id );?>" method="post">
+                            <input type="hidden" name="_method" value="PUT">
                                 <div class="col-md-12 mb-3">
-                                    <input type="text" class="form-control" name="product" value="<?php echo $product ?>" placeholder="Product Name">
+                                    <input type="text" class="form-control" name="product" value="<?php echo $product ;?>" placeholder="Product Name">
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <select id="inputState" class="form-select" name="category">
