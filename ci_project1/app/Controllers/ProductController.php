@@ -42,7 +42,7 @@ class ProductController extends BaseController
 
 
     public function update($id){
-        $this->products = new ProductModel(); 
+        // $this->products = new ProductModel(); 
         $data = [
             'product' => $this->request->getPost('product'),
             'category' => $this->request->getPost('category'),
@@ -52,6 +52,8 @@ class ProductController extends BaseController
         ];
         $this->products->update($id, $data);
         $this->response->redirect('/products');
+        $session = session();
+        $session->setFlashdata('msg', 'Update Successfully');
     }
 
 
@@ -62,6 +64,8 @@ class ProductController extends BaseController
         $this->products->delete();
         //return redirect("products");
         $this->response->redirect('/products');
+        $session = session();
+        $session->setFlashdata('msg', 'Deleted Successfully');
     }
 
     public function store(){
