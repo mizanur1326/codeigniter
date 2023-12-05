@@ -76,17 +76,24 @@ class ProductController extends BaseController
             'model' => $this->request->getVar('model'),
             'price' => $this->request->getVar('price'),
             'sku' => $this->request->getVar('sku'),
+            'photo' => $this->request->getFile('photo')->getName(),
         ];
+
+        //print_r($data);
+
 
         $rules = [
             'product' => 'required|max_length[30]|min_length[3]',
             'price' => 'required|numeric',
             'sku' => 'required|min_length[3]',
+            'photo' => 'uploaded[photo]|max_size[photo,102400]|ext_in[photo,jpg,jpeg,png]'
         ];
 
         if(! $this->validate($rules)){
             return view('products/create');
         }else{
+            $img = $this->request->getFile('photo');
+            $img->move(WRITEPATH . 'uploads');
             $this->products->insert($data);
             $session = session();
             $session->setFlashdata('msg', 'Inserted Successfully');
