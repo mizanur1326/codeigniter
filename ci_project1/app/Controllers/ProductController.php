@@ -40,9 +40,22 @@ class ProductController extends BaseController
 
     }
 
+
     public function update($id){
-        //DO SELF
+        $this->products = new ProductModel(); 
+        $data = [
+            'product' => $this->request->getPost('product'),
+            'category' => $this->request->getPost('category'),
+            'model' => $this->request->getPost('model'),
+            'price' => $this->request->getPost('price'),
+            'sku' => $this->request->getPost('sku'),
+        ];
+        $this->products->update($id, $data);
+        $this->response->redirect('/products');
     }
+
+
+
     public function delete($id){
         //echo $id;
         $this->products->where('product_id', $id);
