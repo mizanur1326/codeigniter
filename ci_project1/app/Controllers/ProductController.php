@@ -44,11 +44,11 @@ class ProductController extends BaseController
     public function update($id){
         // $this->products = new ProductModel(); 
         $data = [
-            'product' => $this->request->getPost('product'),
-            'category' => $this->request->getPost('category'),
-            'model' => $this->request->getPost('model'),
-            'price' => $this->request->getPost('price'),
-            'sku' => $this->request->getPost('sku'),
+            'product' => $this->request->getVar('product'),
+            'category' => $this->request->getVar('category'),
+            'model' => $this->request->getVar('model'),
+            'price' => $this->request->getVar('price'),
+            'sku' => $this->request->getVar('sku'),
         ];
         $this->products->update($id, $data);
         $this->response->redirect('/products');
