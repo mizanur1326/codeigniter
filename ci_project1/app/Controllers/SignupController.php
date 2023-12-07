@@ -20,8 +20,8 @@ class SignupController extends BaseController
     {
         $rules = [
             'name'          => 'required|min_length[2]|max_length[50]',
-            'email'         => 'required|min_length[4]|max_length[100]|valid_email|is_unique[users.email]',
-            'password'      => 'required|min_length[4]|max_length[50]',
+            'email'         => 'required|min_length[3]|max_length[100]|valid_email|is_unique[users.email]',
+            'password'      => 'required|min_length[3]|max_length[50]',
             'confirmpassword'  => 'matches[password]'
         ];
 
@@ -29,7 +29,9 @@ class SignupController extends BaseController
             $data = [
                 'name' => $this->request->getVar('name'),
                 'email' => $this->request->getVar('email'),
-                'password' => $this->request->getVar('password'),
+                'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
+                
+                // password_hash($this->request->getVar('password'), PASSWORD_DEFAULT)
             ];
             $userModel = new UserModel();
             $userModel->save($data);
