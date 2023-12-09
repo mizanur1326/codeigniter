@@ -41,7 +41,9 @@
 
                 <!-- Topbar -->
         <?php 
-            echo $this->include('includes/topbar');
+            echo $this->include('includes/topbar');    
+            // $name = $_SESSION['email'];
+            
         ?>
                 <!-- End of Topbar -->
 

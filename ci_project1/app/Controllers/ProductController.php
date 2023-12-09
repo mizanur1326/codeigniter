@@ -22,7 +22,7 @@ class ProductController extends BaseController
     public function index()
     {
         $data['items'] = $this->products->findAll();
-        $data['title'] = "This is my title";
+        $data['title'] = "Products List";
 
         // print_r($data['products']);
         return view('products/index', $data);
@@ -35,7 +35,7 @@ class ProductController extends BaseController
     public function edit($id){
         //echo $id;
         $data = $this->products->find($id);
-        print_r($data);
+        // print_r($data);
         return view('products/edit', $data);
 
     }
@@ -86,7 +86,7 @@ class ProductController extends BaseController
             'product' => 'required|max_length[30]|min_length[3]',
             'price' => 'required|numeric',
             'sku' => 'required|min_length[3]',
-            'photo' => 'uploaded[photo]|max_size[photo,102400]|ext_in[photo,jpg,jpeg,png]'
+            'photo' => 'uploaded[photo]|max_size[photo,102400]|ext_in[photo,jpg,jpeg,png,webp]'
         ];
 
         if(! $this->validate($rules)){

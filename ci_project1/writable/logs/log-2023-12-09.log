@@ -1,0 +1,577 @@
+INFO - 2023-12-09 03:27:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 03:27:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 03:27:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-12-09 03:27:54 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it.
+ in F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Database\MySQLi\Connection.php:185
+Stack trace:
+#0 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Database\MySQLi\Connection.php(185): mysqli->real_connect('localhost', 'root', '', 'ci_project1', 3306, '', 0)
+#1 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+#5 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\BaseModel.php(662): CodeIgniter\Model->doFirst()
+#6 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\app\Controllers\SigninController.php(29): CodeIgniter\BaseModel->first()
+#7 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\CodeIgniter.php(942): App\Controllers\SigninController->login()
+#8 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SigninController))
+#9 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Commands\Server\rewrite.php(47): require_once('F:\\Mizanur_Rahm...')
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it.
+ in F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+#4 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\BaseModel.php(662): CodeIgniter\Model->doFirst()
+#5 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\app\Controllers\SigninController.php(29): CodeIgniter\BaseModel->first()
+#6 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\CodeIgniter.php(942): App\Controllers\SigninController->login()
+#7 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SigninController))
+#8 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Commands\Server\rewrite.php(47): require_once('F:\\Mizanur_Rahm...')
+#11 {main}
+CRITICAL - 2023-12-09 03:27:54 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it.
+
+in SYSTEMPATH\Database\BaseConnection.php on line 428.
+ 1 SYSTEMPATH\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(662): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Controllers\SigninController.php(29): CodeIgniter\BaseModel->first()
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\SigninController->login()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SigninController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\Mizanur_Rahman_1277622\\XAMPP_7.4.3\\htdocs\\codeigniter\\ci_project1\\public\\index.php')
+INFO - 2023-12-09 03:29:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-12-09 03:29:20 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it.
+ in F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Database\MySQLi\Connection.php:185
+Stack trace:
+#0 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Database\MySQLi\Connection.php(185): mysqli->real_connect('localhost', 'root', '', 'ci_project1', 3306, '', 0)
+#1 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+#5 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\BaseModel.php(662): CodeIgniter\Model->doFirst()
+#6 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\app\Controllers\SigninController.php(29): CodeIgniter\BaseModel->first()
+#7 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\CodeIgniter.php(942): App\Controllers\SigninController->login()
+#8 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SigninController))
+#9 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Commands\Server\rewrite.php(47): require_once('F:\\Mizanur_Rahm...')
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it.
+ in F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+#4 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\BaseModel.php(662): CodeIgniter\Model->doFirst()
+#5 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\app\Controllers\SigninController.php(29): CodeIgniter\BaseModel->first()
+#6 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\CodeIgniter.php(942): App\Controllers\SigninController->login()
+#7 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SigninController))
+#8 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Commands\Server\rewrite.php(47): require_once('F:\\Mizanur_Rahm...')
+#11 {main}
+CRITICAL - 2023-12-09 03:29:20 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it.
+
+in SYSTEMPATH\Database\BaseConnection.php on line 428.
+ 1 SYSTEMPATH\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(662): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Controllers\SigninController.php(29): CodeIgniter\BaseModel->first()
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\SigninController->login()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SigninController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\Mizanur_Rahman_1277622\\XAMPP_7.4.3\\htdocs\\codeigniter\\ci_project1\\public\\index.php')
+INFO - 2023-12-09 03:29:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 03:29:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-09 03:29:25 --> Object of class CodeIgniter\Session\Session could not be converted to string
+in APPPATH\Views\dashboard.php on line 45.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('dashboard', [], true)
+ 4 APPPATH\Controllers\AdminHome.php(11): view('dashboard')
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\AdminHome->index()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminHome))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\Mizanur_Rahman_1277622\\XAMPP_7.4.3\\htdocs\\codeigniter\\ci_project1\\public\\index.php')
+INFO - 2023-12-09 03:29:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 03:29:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 03:30:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-09 03:30:10 --> Object of class CodeIgniter\Session\Session could not be converted to string
+in APPPATH\Views\dashboard.php on line 46.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('dashboard', [], true)
+ 4 APPPATH\Controllers\AdminHome.php(11): view('dashboard')
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\AdminHome->index()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminHome))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\Mizanur_Rahman_1277622\\XAMPP_7.4.3\\htdocs\\codeigniter\\ci_project1\\public\\index.php')
+INFO - 2023-12-09 03:30:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-09 03:30:13 --> Object of class CodeIgniter\Session\Session could not be converted to string
+in APPPATH\Views\dashboard.php on line 46.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('dashboard', [], true)
+ 4 APPPATH\Controllers\AdminHome.php(11): view('dashboard')
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\AdminHome->index()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminHome))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\Mizanur_Rahman_1277622\\XAMPP_7.4.3\\htdocs\\codeigniter\\ci_project1\\public\\index.php')
+INFO - 2023-12-09 03:30:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 03:34:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 03:34:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 03:34:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 03:34:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 03:34:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 03:35:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-09 03:35:06 --> Undefined variable: userData
+in APPPATH\Views\dashboard.php on line 45.
+ 1 APPPATH\Views\dashboard.php(45): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: userData', 'F:\\Mizanur_Rahman_1277622\\XAMPP_7.4.3\\htdocs\\codeigniter\\ci_project1\\app\\Views\\dashboard.php', 45, [])
+ 2 SYSTEMPATH\View\View.php(228): include('F:\\Mizanur_Rahman_1277622\\XAMPP_7.4.3\\htdocs\\codeigniter\\ci_project1\\app\\Views\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('dashboard', [], true)
+ 5 APPPATH\Controllers\AdminHome.php(11): view('dashboard')
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\AdminHome->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminHome))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\Mizanur_Rahman_1277622\\XAMPP_7.4.3\\htdocs\\codeigniter\\ci_project1\\public\\index.php')
+INFO - 2023-12-09 03:35:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 03:35:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 03:35:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 03:35:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 03:35:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 03:35:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 03:35:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 03:35:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 03:35:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 03:35:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 03:35:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 03:35:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 03:35:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 03:37:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 03:37:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 03:37:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 03:37:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 03:38:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 03:38:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 03:39:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 03:39:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 03:42:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-09 03:42:05 --> Undefined variable: session
+in APPPATH\Views\dashboard.php on line 46.
+ 1 APPPATH\Views\dashboard.php(46): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: session', 'F:\\Mizanur_Rahman_1277622\\XAMPP_7.4.3\\htdocs\\codeigniter\\ci_project1\\app\\Views\\dashboard.php', 46, [])
+ 2 SYSTEMPATH\View\View.php(228): include('F:\\Mizanur_Rahman_1277622\\XAMPP_7.4.3\\htdocs\\codeigniter\\ci_project1\\app\\Views\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('dashboard', [], true)
+ 5 APPPATH\Controllers\AdminHome.php(11): view('dashboard')
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\AdminHome->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminHome))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\Mizanur_Rahman_1277622\\XAMPP_7.4.3\\htdocs\\codeigniter\\ci_project1\\public\\index.php')
+INFO - 2023-12-09 03:46:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 03:46:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 03:47:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 03:48:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-09 03:48:40 --> Undefined variable: session
+in APPPATH\Views\includes\topbar.php on line 175.
+ 1 APPPATH\Views\includes\topbar.php(175): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: session', 'F:\\Mizanur_Rahman_1277622\\XAMPP_7.4.3\\htdocs\\codeigniter\\ci_project1\\app\\Views\\includes\\topbar.php', 175, [])
+ 2 SYSTEMPATH\View\View.php(228): include('F:\\Mizanur_Rahman_1277622\\XAMPP_7.4.3\\htdocs\\codeigniter\\ci_project1\\app\\Views\\includes\\topbar.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(469): CodeIgniter\View\View->render('includes/topbar', null, true)
+ 5 APPPATH\Views\dashboard.php(44): CodeIgniter\View\View->include('includes/topbar')
+ 6 SYSTEMPATH\View\View.php(228): include('F:\\Mizanur_Rahman_1277622\\XAMPP_7.4.3\\htdocs\\codeigniter\\ci_project1\\app\\Views\\dashboard.php')
+ 7 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('dashboard', [], true)
+ 9 APPPATH\Controllers\AdminHome.php(11): view('dashboard')
+10 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\AdminHome->index()
+11 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminHome))
+12 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\Mizanur_Rahman_1277622\\XAMPP_7.4.3\\htdocs\\codeigniter\\ci_project1\\public\\index.php')
+INFO - 2023-12-09 03:48:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-09 03:48:41 --> Undefined variable: session
+in APPPATH\Views\includes\topbar.php on line 175.
+ 1 APPPATH\Views\includes\topbar.php(175): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: session', 'F:\\Mizanur_Rahman_1277622\\XAMPP_7.4.3\\htdocs\\codeigniter\\ci_project1\\app\\Views\\includes\\topbar.php', 175, [])
+ 2 SYSTEMPATH\View\View.php(228): include('F:\\Mizanur_Rahman_1277622\\XAMPP_7.4.3\\htdocs\\codeigniter\\ci_project1\\app\\Views\\includes\\topbar.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(469): CodeIgniter\View\View->render('includes/topbar', null, true)
+ 5 APPPATH\Views\dashboard.php(44): CodeIgniter\View\View->include('includes/topbar')
+ 6 SYSTEMPATH\View\View.php(228): include('F:\\Mizanur_Rahman_1277622\\XAMPP_7.4.3\\htdocs\\codeigniter\\ci_project1\\app\\Views\\dashboard.php')
+ 7 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('dashboard', [], true)
+ 9 APPPATH\Controllers\AdminHome.php(11): view('dashboard')
+10 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\AdminHome->index()
+11 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminHome))
+12 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\Mizanur_Rahman_1277622\\XAMPP_7.4.3\\htdocs\\codeigniter\\ci_project1\\public\\index.php')
+INFO - 2023-12-09 03:48:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 03:48:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 03:49:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 03:49:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 03:50:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 03:52:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 03:52:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 03:52:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 03:52:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 03:52:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 03:52:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 03:52:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 03:52:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 03:52:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 03:52:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 03:52:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 03:52:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 03:52:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 03:57:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 03:57:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 05:13:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 05:29:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-09 06:11:19 --> Invalid file: "/.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/.php')
+ 2 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('/', [], true)
+ 3 APPPATH\Controllers\CategoryController.php(14): view('/')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\CategoryController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CategoryController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\Mizanur_Rahman_1277622\\XAMPP_7.4.3\\htdocs\\codeigniter\\ci_project1\\public\\index.php')
+INFO - 2023-12-09 06:11:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-09 06:11:57 --> Undefined variable: items
+in APPPATH\Views\category\index.php on line 88.
+ 1 APPPATH\Views\category\index.php(88): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: items', 'F:\\Mizanur_Rahman_1277622\\XAMPP_7.4.3\\htdocs\\codeigniter\\ci_project1\\app\\Views\\category\\index.php', 88, [])
+ 2 SYSTEMPATH\View\View.php(228): include('F:\\Mizanur_Rahman_1277622\\XAMPP_7.4.3\\htdocs\\codeigniter\\ci_project1\\app\\Views\\category\\index.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('category/index', [], true)
+ 5 APPPATH\Controllers\CategoryController.php(14): view('category/index')
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\CategoryController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CategoryController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\Mizanur_Rahman_1277622\\XAMPP_7.4.3\\htdocs\\codeigniter\\ci_project1\\public\\index.php')
+INFO - 2023-12-09 06:12:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-09 06:12:35 --> Undefined variable: items
+in APPPATH\Views\category\index.php on line 88.
+ 1 APPPATH\Views\category\index.php(88): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: items', 'F:\\Mizanur_Rahman_1277622\\XAMPP_7.4.3\\htdocs\\codeigniter\\ci_project1\\app\\Views\\category\\index.php', 88, [])
+ 2 SYSTEMPATH\View\View.php(228): include('F:\\Mizanur_Rahman_1277622\\XAMPP_7.4.3\\htdocs\\codeigniter\\ci_project1\\app\\Views\\category\\index.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('category/index', [], true)
+ 5 APPPATH\Controllers\CategoryController.php(14): view('category/index')
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\CategoryController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CategoryController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\Mizanur_Rahman_1277622\\XAMPP_7.4.3\\htdocs\\codeigniter\\ci_project1\\public\\index.php')
+INFO - 2023-12-09 06:13:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-09 06:13:01 --> Undefined variable: items
+in APPPATH\Views\category\index.php on line 88.
+ 1 APPPATH\Views\category\index.php(88): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: items', 'F:\\Mizanur_Rahman_1277622\\XAMPP_7.4.3\\htdocs\\codeigniter\\ci_project1\\app\\Views\\category\\index.php', 88, [])
+ 2 SYSTEMPATH\View\View.php(228): include('F:\\Mizanur_Rahman_1277622\\XAMPP_7.4.3\\htdocs\\codeigniter\\ci_project1\\app\\Views\\category\\index.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('category/index', [], true)
+ 5 APPPATH\Controllers\CategoryController.php(14): view('category/index')
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\CategoryController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CategoryController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\Mizanur_Rahman_1277622\\XAMPP_7.4.3\\htdocs\\codeigniter\\ci_project1\\public\\index.php')
+CRITICAL - 2023-12-09 06:13:15 --> syntax error, unexpected 'endforeach' (T_ENDFOREACH), expecting end of file
+in APPPATH\Views\category\index.php on line 104.
+ 1 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('category/index', [], true)
+ 3 APPPATH\Controllers\CategoryController.php(14): view('category/index')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\CategoryController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CategoryController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\Mizanur_Rahman_1277622\\XAMPP_7.4.3\\htdocs\\codeigniter\\ci_project1\\public\\index.php')
+INFO - 2023-12-09 06:13:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:14:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:14:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:14:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:15:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:15:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:16:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:20:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:21:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-09 06:23:38 --> syntax error, unexpected end of file
+in APPPATH\Views\category\index.php on line 165.
+ 1 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('category/index', [], true)
+ 3 APPPATH\Controllers\CategoryController.php(23): view('category/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\CategoryController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CategoryController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\Mizanur_Rahman_1277622\\XAMPP_7.4.3\\htdocs\\codeigniter\\ci_project1\\public\\index.php')
+INFO - 2023-12-09 06:23:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-09 06:23:46 --> Undefined variable: categorys
+in APPPATH\Views\category\index.php on line 84.
+ 1 APPPATH\Views\category\index.php(84): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: categorys', 'F:\\Mizanur_Rahman_1277622\\XAMPP_7.4.3\\htdocs\\codeigniter\\ci_project1\\app\\Views\\category\\index.php', 84, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('F:\\Mizanur_Rahman_1277622\\XAMPP_7.4.3\\htdocs\\codeigniter\\ci_project1\\app\\Views\\category\\index.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('category/index', [], true)
+ 5 APPPATH\Controllers\CategoryController.php(23): view('category/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\CategoryController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CategoryController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\Mizanur_Rahman_1277622\\XAMPP_7.4.3\\htdocs\\codeigniter\\ci_project1\\public\\index.php')
+INFO - 2023-12-09 06:24:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-09 06:24:41 --> Undefined index: product_id
+in APPPATH\Views\category\index.php on line 87.
+ 1 APPPATH\Views\category\index.php(87): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: product_id', 'F:\\Mizanur_Rahman_1277622\\XAMPP_7.4.3\\htdocs\\codeigniter\\ci_project1\\app\\Views\\category\\index.php', 87, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('F:\\Mizanur_Rahman_1277622\\XAMPP_7.4.3\\htdocs\\codeigniter\\ci_project1\\app\\Views\\category\\index.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('category/index', [], true)
+ 5 APPPATH\Controllers\CategoryController.php(23): view('category/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\CategoryController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CategoryController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\Mizanur_Rahman_1277622\\XAMPP_7.4.3\\htdocs\\codeigniter\\ci_project1\\public\\index.php')
+INFO - 2023-12-09 06:24:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:25:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:26:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:28:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:29:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:29:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:29:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:29:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:30:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:33:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:33:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:33:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:33:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:34:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:34:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:34:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:34:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:34:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:35:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:35:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:35:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:37:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:37:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:37:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:38:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:38:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:38:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:38:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:39:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:39:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:39:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:39:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:39:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:39:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:39:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:39:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:40:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:40:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:42:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:42:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:42:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:42:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:42:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:42:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:44:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:45:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:47:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:47:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-09 06:47:48 --> Undefined index: product_id
+in APPPATH\Views\category\index.php on line 90.
+ 1 APPPATH\Views\category\index.php(90): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: product_id', 'F:\\Mizanur_Rahman_1277622\\XAMPP_7.4.3\\htdocs\\codeigniter\\ci_project1\\app\\Views\\category\\index.php', 90, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('F:\\Mizanur_Rahman_1277622\\XAMPP_7.4.3\\htdocs\\codeigniter\\ci_project1\\app\\Views\\category\\index.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('category/index', [], true)
+ 5 APPPATH\Controllers\CategoryController.php(23): view('category/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\CategoryController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CategoryController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\Mizanur_Rahman_1277622\\XAMPP_7.4.3\\htdocs\\codeigniter\\ci_project1\\public\\index.php')
+INFO - 2023-12-09 06:48:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:49:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:50:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:50:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:51:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:53:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:53:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:53:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:53:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:54:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:55:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:55:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:56:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:56:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:56:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:57:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:57:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 06:58:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 07:02:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 07:03:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 07:05:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 07:06:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 07:06:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 07:06:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 07:08:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 07:08:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-12-09 07:10:37 --> mysqli_sql_exception: Unknown column 'category' in 'field list' in F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `pr...', 0)
+#1 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+#5 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\BaseModel.php(788): CodeIgniter\Model->doInsert(Array)
+#6 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Model.php(715): CodeIgniter\BaseModel->insert(Array, true)
+#7 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\app\Controllers\ProductController.php(97): CodeIgniter\Model->insert(Array)
+#8 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\CodeIgniter.php(942): App\Controllers\ProductController->store()
+#9 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+#10 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Commands\Server\rewrite.php(47): require_once('F:\\Mizanur_Rahm...')
+#13 {main}
+CRITICAL - 2023-12-09 07:10:37 --> Unknown column 'category' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product`, `category`, `model`, `price`, `sku`, `photo`) VALUES (:product:, :category:, :model:, :price:, :sku:, :photo:)', [...], false)
+ 2 SYSTEMPATH\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(788): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(715): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\ProductController.php(97): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ProductController->store()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\Mizanur_Rahman_1277622\\XAMPP_7.4.3\\htdocs\\codeigniter\\ci_project1\\public\\index.php')
+INFO - 2023-12-09 07:11:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-12-09 07:11:24 --> mysqli_sql_exception: Unknown column 'category' in 'field list' in F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `pr...', 0)
+#1 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+#5 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\BaseModel.php(788): CodeIgniter\Model->doInsert(Array)
+#6 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Model.php(715): CodeIgniter\BaseModel->insert(Array, true)
+#7 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\app\Controllers\ProductController.php(97): CodeIgniter\Model->insert(Array)
+#8 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\CodeIgniter.php(942): App\Controllers\ProductController->store()
+#9 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+#10 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Commands\Server\rewrite.php(47): require_once('F:\\Mizanur_Rahm...')
+#13 {main}
+CRITICAL - 2023-12-09 07:11:24 --> Unknown column 'category' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product`, `category`, `model`, `price`, `sku`, `photo`) VALUES (:product:, :category:, :model:, :price:, :sku:, :photo:)', [...], false)
+ 2 SYSTEMPATH\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(788): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(715): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\ProductController.php(97): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ProductController->store()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\Mizanur_Rahman_1277622\\XAMPP_7.4.3\\htdocs\\codeigniter\\ci_project1\\public\\index.php')
+INFO - 2023-12-09 07:12:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 07:12:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 07:12:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 07:12:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 07:12:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-12-09 07:12:27 --> mysqli_sql_exception: Unknown column 'category' in 'field list' in F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `pr...', 0)
+#1 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+#5 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\BaseModel.php(788): CodeIgniter\Model->doInsert(Array)
+#6 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Model.php(715): CodeIgniter\BaseModel->insert(Array, true)
+#7 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\app\Controllers\ProductController.php(97): CodeIgniter\Model->insert(Array)
+#8 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\CodeIgniter.php(942): App\Controllers\ProductController->store()
+#9 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+#10 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Commands\Server\rewrite.php(47): require_once('F:\\Mizanur_Rahm...')
+#13 {main}
+CRITICAL - 2023-12-09 07:12:27 --> Unknown column 'category' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product`, `category`, `model`, `price`, `sku`, `photo`) VALUES (:product:, :category:, :model:, :price:, :sku:, :photo:)', [...], false)
+ 2 SYSTEMPATH\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(788): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(715): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\ProductController.php(97): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ProductController->store()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\Mizanur_Rahman_1277622\\XAMPP_7.4.3\\htdocs\\codeigniter\\ci_project1\\public\\index.php')
+INFO - 2023-12-09 07:12:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 07:12:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 07:12:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 07:12:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 07:12:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 07:14:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 07:14:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-12-09 07:15:17 --> mysqli_sql_exception: Unknown column 'photo' in 'field list' in F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `pr...', 0)
+#1 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+#5 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\BaseModel.php(788): CodeIgniter\Model->doInsert(Array)
+#6 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Model.php(715): CodeIgniter\BaseModel->insert(Array, true)
+#7 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\app\Controllers\ProductController.php(97): CodeIgniter\Model->insert(Array)
+#8 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\CodeIgniter.php(942): App\Controllers\ProductController->store()
+#9 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+#10 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Commands\Server\rewrite.php(47): require_once('F:\\Mizanur_Rahm...')
+#13 {main}
+CRITICAL - 2023-12-09 07:15:17 --> Unknown column 'photo' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`product`, `category`, `model`, `price`, `sku`, `photo`) VALUES (:product:, :category:, :model:, :price:, :sku:, :photo:)', [...], false)
+ 2 SYSTEMPATH\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(788): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(715): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\ProductController.php(97): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ProductController->store()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\Mizanur_Rahman_1277622\\XAMPP_7.4.3\\htdocs\\codeigniter\\ci_project1\\public\\index.php')
+INFO - 2023-12-09 07:16:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 07:18:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 07:18:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 07:19:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 07:19:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 07:19:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 07:19:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 07:19:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-09 07:19:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

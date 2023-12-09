@@ -43,6 +43,7 @@ class SigninController extends BaseController
                 ];
                 $session->set($userData);
                 return redirect()->to('/');
+
             } else {
                 $session->setFlashdata('msg', "Password is Incorrect");
                 return view('/signin');

@@ -55,36 +55,16 @@
 
                 <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Add Product Form</h5>
+                            <h5 class="card-title">Create Category</h5>
 
-                            <?php echo validation_list_errors();?>
+                            <?php //echo validation_list_errors();?>
 
                             <!-- No Labels Form -->
                             <form class="row g-3" action="store" method="post" enctype="multipart/form-data">
                                 <div class="col-md-12 mb-3">
-                                    <input type="text" class="form-control" name="product" value="<?php set_value('product')?>" placeholder="Product Name">
+                                    <input type="text" class="form-control" name="product" value="<?php set_value('product')?>" placeholder="Category Name">
                                 </div>
-                                <div class="col-md-6 mb-3">
-                                    <select id="inputState" class="form-select" value="<?php set_value('category')?>" name="category">
-                                        <option selected>Category</option>
-                                        <option>Shirt</option>
-                                        <option>Pant</option>
-                                        <option>Belt</option>
-                                        <option>Shoes</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <input type="text" class="form-control" name="model" value="<?php set_value('model')?>" placeholder="Model">
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <input type="text" class="form-control" name="price" value="<?php set_value('price')?>" placeholder="Price">
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <input type="text" class="form-control" name="sku" value="<?php set_value('sku')?>" placeholder="SKU">
-                                </div>
-                                <div class="col-md-12 mb-3">
-                                    <input type="file" class="form-control" name="photo" value="<?php set_value('photo')?>">
-                                </div>
+
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-primary">Add</button>
                                     <button type="reset" class="btn btn-secondary">Reset</button>
