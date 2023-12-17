@@ -1,0 +1,81 @@
+INFO - 2023-12-10 02:49:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-10 02:49:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-10 02:59:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-12-10 02:59:44 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it.
+ in F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Database\MySQLi\Connection.php:185
+Stack trace:
+#0 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Database\MySQLi\Connection.php(185): mysqli->real_connect('localhost', 'root', '', 'ci_project1', 3306, '', 0)
+#1 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+#5 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\BaseModel.php(662): CodeIgniter\Model->doFirst()
+#6 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\app\Controllers\SigninController.php(29): CodeIgniter\BaseModel->first()
+#7 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\CodeIgniter.php(942): App\Controllers\SigninController->login()
+#8 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SigninController))
+#9 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Commands\Server\rewrite.php(47): require_once('F:\\Mizanur_Rahm...')
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it.
+ in F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+#4 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\BaseModel.php(662): CodeIgniter\Model->doFirst()
+#5 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\app\Controllers\SigninController.php(29): CodeIgniter\BaseModel->first()
+#6 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\CodeIgniter.php(942): App\Controllers\SigninController->login()
+#7 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SigninController))
+#8 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 F:\Mizanur_Rahman_1277622\XAMPP_7.4.3\htdocs\codeigniter\ci_project1\system\Commands\Server\rewrite.php(47): require_once('F:\\Mizanur_Rahm...')
+#11 {main}
+CRITICAL - 2023-12-10 02:59:44 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it.
+
+in SYSTEMPATH\Database\BaseConnection.php on line 428.
+ 1 SYSTEMPATH\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(662): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Controllers\SigninController.php(29): CodeIgniter\BaseModel->first()
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\SigninController->login()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SigninController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\Mizanur_Rahman_1277622\\XAMPP_7.4.3\\htdocs\\codeigniter\\ci_project1\\public\\index.php')
+INFO - 2023-12-10 03:01:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-10 03:01:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-10 03:01:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-10 03:06:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-10 03:06:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-10 03:06:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-10 03:06:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-10 03:06:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-10 03:11:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-10 03:11:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-10 03:16:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-10 03:16:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-10 03:16:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-10 03:16:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-10 03:16:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-10 03:16:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-10 03:16:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-10 03:16:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-10 03:17:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-10 03:17:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-10 04:30:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-10 06:32:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-10 06:32:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-10 06:32:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-10 06:32:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-10 06:32:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-10 06:32:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-10 06:32:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-10 06:32:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
