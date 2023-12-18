@@ -36,7 +36,7 @@ class ServiceController extends BaseController
     }
     
     public function store(){
-        // return $this->request->getVar('product');
+        //return $this->request->getVar('description');
         $data = [
             'serviceName' => $this->request->getVar('service'),
             'description' => $this->request->getVar('description'),
@@ -44,11 +44,12 @@ class ServiceController extends BaseController
             'image' => $this->request->getFile('image')->getName(),
         ];
 
-        // print_r($data);
+         
+        //  return print_r($data);
 
         $rules = [
-            'serviceName' => 'required|max_length[30]|min_length[3]',
-            'description' => 'max_length[30]|min_length[3]',
+            'service' => 'required|max_length[30]|min_length[3]',
+            'description' => 'required|max_length[30]|min_length[3]',
             'price' => 'required|numeric',
             'image' => 'uploaded[image]|max_size[image,102400]|ext_in[image,jpg,jpeg,png,webp]'
         ];
@@ -59,22 +60,12 @@ class ServiceController extends BaseController
             $img = $this->request->getFile('image');
             $img->move(WRITEPATH . 'uploads');
             $this->services->insert($data);
-            // $session = session();
-            // $session->setFlashdata('msg', 'Inserted Successfully');
+            $session = session();
+            $session->setFlashdata('msg', 'Inserted Successfully');
             $this->response->redirect('/services');
         }
 
-        if($data){
-            $this->response->redirect('/services');
-        } else {
-            // $img = $this->request->getFile('image');
-            // $img->move(WRITEPATH . 'uploads');
-            $this->services->insert($data);
-            $this->response->redirect('create');
-        }
-
-
-        
+       
     }
 
 }
