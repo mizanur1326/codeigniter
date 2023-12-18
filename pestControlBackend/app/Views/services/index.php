@@ -41,6 +41,12 @@
                     <!-- end pageheader  -->
                     <!-- ============================================================== -->
                     <div class="table-responsive">
+                    <?php if (session()->getFlashdata('msg')) : ?>
+                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                    <?php echo session()->getFlashdata('msg'); ?>
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                </div>
+                            <?php endif; ?>
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>

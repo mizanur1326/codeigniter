@@ -27,14 +27,7 @@ class ServiceController extends BaseController
     public function create(){
         return view('services/create');
     }
-
-    public function edit($id){
-        //echo $id;
-        $data = $this->services->find($id);
-        //print_r($data);
-        return view('services/edit', $data);
-    }
-    
+   
     public function store(){
         //return $this->request->getVar('description');
         $data = [
@@ -63,9 +56,39 @@ class ServiceController extends BaseController
             $session = session();
             $session->setFlashdata('msg', 'Inserted Successfully');
             $this->response->redirect('/services');
-        }
+        }       
+    }
 
-       
+    public function edit($id){
+        //echo $id;
+        $data = $this->services->find($id);
+        //print_r($data);
+        return view('services/edit', $data);
+    }
+
+    public function update($id){
+        // $this->products = new ProductModel(); 
+        $data = [
+            'serviceName' => $this->request->getVar('service'),
+            'description' => $this->request->getVar('description'),
+            'price' => $this->request->getVar('price'),
+            //'image' => $this->request->getFile('image')->getName(),        //////IMAGE PORE KORBO
+        ];
+        $this->services->update($id, $data);
+        $this->response->redirect('/services');
+        $session = session();
+        $session->setFlashdata('msg', 'Update Successfully');
+    }
+
+
+    public function delete($id){
+        //echo $id;
+        $this->services->where('id', $id);
+        $this->services->delete();
+        //return redirect("services");
+        $this->response->redirect('/services');
+        $session = session();
+        $session->setFlashdata('msg', 'Deleted Successfully');
     }
 
 }
