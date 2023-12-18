@@ -1,7 +1,6 @@
 <?php echo $this->include('include/header.php');?> 
-<title>Create Service</title>
+<title><?php echo $title;?></title>
 </head>
-
 <body>
     <!-- ============================================================== -->
     <!-- main wrapper -->
@@ -41,24 +40,43 @@
                     <!-- ============================================================== -->
                     <!-- end pageheader  -->
                     <!-- ============================================================== -->
-                    <form class="row g-3" action="/store" method="post" enctype="multipart/form-data">
-                                <div class="col-md-12 mb-3">
-                                    <input type="text" class="form-control" name="service" value="<?php set_value('service')?>" placeholder="Service Name">
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <input type="text" class="form-control" name="description" value="<?php set_value('description')?>" placeholder="Description">
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <input type="text" class="form-control" name="price" value="<?php set_value('price')?>" placeholder="Price">
-                                </div>
-                                <div class="col-md-12 mb-3">
-                                    <input type="file" class="form-control" name="image" value="<?php set_value('image')?>">
-                                </div>
-                                <div class="text-center">
-                                    <button type="submit" class="btn btn-primary">Add</button>
-                                    <button type="reset" class="btn btn-secondary">Reset</button>
-                                </div>
-                            </form>
+                    <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Service Name</th>
+                                            <th>Description</th>
+                                            <th>Price</th>
+                                            <th>Image</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <?php
+                                        foreach ($items as $item) :
+                                        ?>
+                                            <tr>
+                                                <td><?php echo $item['id'] ?></td>
+                                                <td><?php echo $item['serviceName'] ?></td>
+                                                <td><?php echo $item['description'] ?></td>
+                                                <td><?php echo $item['price'] ?></td>
+                                                <td><?php echo $item['image'] ?></td>
+                                                <td>
+                                                    <a href="<?php echo base_url('/services/delete/'.$item['id'])?>" class="btn btn-danger" onclick="return confirm('Are You Sure to Delete?')"><i class="fa fa-trash"></i></a>
+
+                                                    <a href="<?php echo base_url('/services/edit/'.$item['id'])?>" class="btn btn-success"><i class="fa fa-edit"></i></a>
+                                                </td>
+                                            </tr>
+                                        <?php
+                                        endforeach;
+                                        ?>
+                                    </tbody>
+                                 
+                                </table>
+                            </div>
+                </div>
             </div>
             <!-- ============================================================== -->
             

@@ -1,5 +1,5 @@
 <?php echo $this->include('include/header.php');?> 
-<title>Create Service</title>
+<title>Edit Service</title>
 </head>
 
 <body>
@@ -41,18 +41,21 @@
                     <!-- ============================================================== -->
                     <!-- end pageheader  -->
                     <!-- ============================================================== -->
-                    <form class="row g-3" action="/store" method="post" enctype="multipart/form-data">
+
+                    <?php echo validation_list_errors();?>
+
+                    <form class="row g-3" action="<?php echo site_url('services/update/'. $id );?>" method="post">
                                 <div class="col-md-12 mb-3">
-                                    <input type="text" class="form-control" name="service" value="<?php set_value('service')?>" placeholder="Service Name">
+                                    <input type="text" class="form-control" name="service" value="<?php echo $serviceName ;?>" placeholder="Service Name">
                                 </div>
                                 <div class="col-md-6 mb-3">
-                                    <input type="text" class="form-control" name="description" value="<?php set_value('description')?>" placeholder="Description">
+                                    <input type="text" class="form-control" name="description" value="<?php echo $description?>" placeholder="Description">
                                 </div>
                                 <div class="col-md-6 mb-3">
-                                    <input type="text" class="form-control" name="price" value="<?php set_value('price')?>" placeholder="Price">
+                                    <input type="text" class="form-control" name="price" value="<?php echo $price?>" placeholder="Price">
                                 </div>
                                 <div class="col-md-12 mb-3">
-                                    <input type="file" class="form-control" name="image" value="<?php set_value('image')?>">
+                                    <input type="file" class="form-control" name="image" value="<?php echo $image?>">
                                 </div>
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-primary">Add</button>
