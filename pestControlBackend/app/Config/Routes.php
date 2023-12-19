@@ -16,3 +16,10 @@ $routes->get('services/delete/(:num)', 'ServiceController::delete/$1');
 $routes->get('services/edit/(:num)', 'ServiceController::edit/$1');
 $routes->post('services/update/(:num)', 'ServiceController::update/$1');
 
+
+
+
+//FrontEnd Routes
+$routes->get('allService', 'frontEnd\ServiceController::index');
+$routes->get('allService/(:num)', 'frontEnd\ServiceController::show/$1');
+

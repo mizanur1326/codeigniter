@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Filters\Cors;
 use App\Controllers\BaseController;
 use App\Models\ServiceModel;
 
