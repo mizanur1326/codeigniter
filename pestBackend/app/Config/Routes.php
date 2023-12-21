@@ -17,6 +17,19 @@ $routes->get('services/edit/(:num)', 'ServiceController::edit/$1');
 $routes->post('services/update/(:num)', 'ServiceController::update/$1');
 
 
+
+
+//Blogs Routes
+$routes->get('blogs', 'BlogController::index' , ['filter' => 'authGuard']);
+$routes->get('create', 'BlogController::create' , ['filter' => 'authGuard']);
+$routes->post('store', 'BlogController::store', ['filter' => 'authGuard']);
+$routes->get('blogs/delete/(:num)', 'BlogController::delete/$1');
+$routes->get('blogs/edit/(:num)', 'BlogController::edit/$1');
+$routes->post('blogs/update/(:num)', 'BlogController::update/$1');
+
+
+
+
 //Signup /Signin
 $routes->get('signup', 'SignupController::index');
 $routes->match(['get', 'post'], 'signup/store', 'SignupController::store');
