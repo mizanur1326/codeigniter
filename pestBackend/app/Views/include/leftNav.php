@@ -34,10 +34,10 @@
                                 <div id="submenu-3" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="">Add Blog</a>
+                                            <a class="nav-link" href="/blogs/create">Add Blog</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="">View Blogs</a>
+                                            <a class="nav-link" href="/blogs">View Blogs</a>
                                         </li>
                                     </ul>
                                 </div>

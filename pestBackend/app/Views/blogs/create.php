@@ -25,7 +25,7 @@
                     <div class="row">
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="page-header">
-                                <h2 class="pageheader-title">Services List</h2>
+                                <h2 class="pageheader-title">Create Blog</h2>
                                 <!-- <p class="pageheader-text">Nulla euismod urna eros, sit amet scelerisque torton lectus vel mauris facilisis faucibus at enim quis massa lobortis rutrum.</p> -->
                                 <div class="page-breadcrumb">
                                     <nav aria-label="breadcrumb">
@@ -41,20 +41,14 @@
                     <!-- ============================================================== -->
                     <!-- end pageheader  -->
                     <!-- ============================================================== -->
-                    <form class="row g-3" action="/store" method="post" enctype="multipart/form-data">
-                                <div class="col-md-12 mb-3">
-                                    <input type="text" class="form-control" name="service" value="<?php set_value('service')?>" placeholder="Service Name">
-                                </div>
+                    <form class="row g-3" action="/blogs/store" method="post" enctype="multipart/form-data">
                                 <div class="col-md-6 mb-3">
-                                    <input type="text" class="form-control" name="description" value="<?php set_value('description')?>" placeholder="Description">
+                                    <input type="text" class="form-control" name="title" value="<?php set_value('title')?>" placeholder="Blog Title">
                                 </div>
-                                <div class="col-md-6 mb-3">
-                                    <input type="text" class="form-control" name="price" value="<?php set_value('price')?>" placeholder="Price">
-                                </div>
-                                <div class="col-md-12 mb-3">
-                                    <input type="file" class="form-control" name="image" value="<?php set_value('image')?>">
-                                </div>
-                                <div class="text-center">
+                                <div class="col-md-8 mb-3" >
+                                    <input type="text" class="form-control" style="height: 200px;" name="description" value="<?php set_value('description')?>" placeholder="Blog Description">                                  
+                                </div> 
+                                <div class="col-md-8">
                                     <button type="submit" class="btn btn-primary">Add</button>
                                     <button type="reset" class="btn btn-secondary">Reset</button>
                                 </div>
