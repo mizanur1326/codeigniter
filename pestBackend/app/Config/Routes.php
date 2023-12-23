@@ -40,7 +40,13 @@ $routes->get('signout', 'SigninController::logout');
 
 
 
-//FrontEnd Routes
+//FrontEnd Routes Start
+
+//FrontEnd Servie Routes
 $routes->get('allService', 'frontEnd\ServiceController::index');
 $routes->get('allService/(:num)', 'frontEnd\ServiceController::show/$1');
+
+//FrontEnd Blog Routes
+$routes->get('allBlog', 'frontEnd\BlogController::index');
+$routes->get('allBlog/(:num)', 'frontEnd\BlogController::show/$1');
 

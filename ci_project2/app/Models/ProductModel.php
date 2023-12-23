@@ -4,15 +4,15 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class BlogModel extends Model
+class ProductModel extends Model
 {
-    protected $table            = 'blogs';
+    protected $table            = 'product';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['id', 'title', 'description'];
+    protected $allowedFields    = ['name', 'price', 'sale_price', 'sales_count', 'sale_date'];
 
     // Dates
     protected $useTimestamps = false;

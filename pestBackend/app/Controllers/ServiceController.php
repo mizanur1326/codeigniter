@@ -42,10 +42,10 @@ class ServiceController extends BaseController
         //  return print_r($data);
 
         $rules = [
-            'service' => 'required|max_length[30]|min_length[3]',
-            'description' => 'required|max_length[30]|min_length[3]',
+            'service' => 'required|max_length[100]|min_length[3]',
+            'description' => 'required|max_length[1000]|min_length[3]',
             'price' => 'required|numeric',
-            'image' => 'uploaded[image]|max_size[image,102400]|ext_in[image,jpg,jpeg,png,webp]'
+            'image' => 'uploaded[image]|max_size[image,1024000]|ext_in[image,jpg,jpeg,png,webp]'
         ];
 
         if(! $this->validate($rules)){

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 21, 2023 at 09:21 AM
+-- Generation Time: Dec 23, 2023 at 07:23 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -29,9 +29,20 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `blogs` (
   `id` int(11) NOT NULL,
-  `title` varchar(50) NOT NULL,
-  `description` varchar(100) NOT NULL
+  `title` varchar(100) NOT NULL,
+  `description` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `blogs`
+--
+
+INSERT INTO `blogs` (`id`, `title`, `description`) VALUES
+(1, 'Blog A', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'),
+(2, 'Blog B', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'),
+(3, 'Blog C', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'),
+(4, 'Blog D', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'),
+(5, 'Blog E', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.');
 
 -- --------------------------------------------------------
 
@@ -41,8 +52,8 @@ CREATE TABLE `blogs` (
 
 CREATE TABLE `services` (
   `id` int(11) NOT NULL,
-  `serviceName` varchar(50) NOT NULL,
-  `description` varchar(100) NOT NULL,
+  `serviceName` varchar(100) NOT NULL,
+  `description` varchar(1000) NOT NULL,
   `price` int(11) NOT NULL,
   `image` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -52,12 +63,11 @@ CREATE TABLE `services` (
 --
 
 INSERT INTO `services` (`id`, `serviceName`, `description`, `price`, `image`) VALUES
-(1, 'General Pest Control', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at consequat nulla.', 1000, ''),
-(2, 'Bedbug Pest Control', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at consequat nulla.', 1500, ''),
-(3, 'Cockroach Pest Control', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at consequat nulla.', 2000, ''),
-(4, 'Rodents Pest Control', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at consequat nulla.', 2500, ''),
-(5, 'Ant Pest Control', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at consequat nulla.', 3000, ''),
-(7, 'Ikbal', 'Lorem Ikbal', 123, '1.png');
+(1, 'Ant Control', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.', 50, 'ant.jpg'),
+(2, 'Rodent Control', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.', 100, 'rodent.jpg'),
+(3, 'Bed Bug', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.', 150, 'bedbug.jpg'),
+(4, 'Mosquito Control', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.', 200, 'mosquito.jpg'),
+(5, 'Flies Control', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.', 250, 'flies.jpg');
 
 -- --------------------------------------------------------
 
@@ -110,13 +120,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `blogs`
 --
 ALTER TABLE `blogs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `services`
 --
 ALTER TABLE `services`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `users`
